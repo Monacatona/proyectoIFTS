@@ -1,0 +1,404 @@
+para iniciar un proyecto
+npm init
+npm i express mysql body-parser
+npm i nodemon -date
+nodemon app.js 
+
+app.get("/pruebas/calles", (req, res) => {
+  const consulta = "SELECT * FROM calle";
+
+  connection.query(consulta, (error, resultados) => {
+    if (error) throw error;
+    if (resultados.length > 0) {
+      res.json(resultados);
+    } else {
+      res.send("No hay datos");
+    }
+  });
+});
+
+
+app.get("/pruebas/calles/alturas/tasaciones", (req, res) => {
+  const consulta = "SELECT * FROM tasaciones";
+
+  connection.query(consulta, (error, resultados) => {
+    if (error) throw error;
+    if (resultados.length > 0) {
+      res.json(resultados);
+    } else {
+      res.send("No hay datos");
+    }
+  });
+});
+
+app.get("/prueba/:id", (req, res) => {
+  const { id } = req.params;
+  const consulta = `SELECT * FROM ciudad WHERE idCiudad=${id}`;
+
+  connection.query(consulta, (error, resultado) => {
+    if (error) throw error;
+    if (resultado.length > 0) {
+      res.json(resultado);
+    } else {
+      res.send("No hay un ID que matchee con la base");
+    }
+  });
+});
+
+app.get("/prueba/calle/:id", (req, res) => {
+  const { id } = req.params;
+
+  const consulta = `SELECT * FROM calle WHERE idCalle=${id}`;
+
+  connection.query(consulta, (error, resultado) => {
+    if (error) throw error;
+    if (resultado.length > 0) {
+      res.json(resultado);
+    } else {
+      res.send("No hay un ID que matchee con la base");
+    }
+  });
+});
+app.get("/prueba/calle/altura/:id", (req, res) => {
+  const { id } = req.params;
+  const consulta = `SELECT * FROM altura WHERE idAltura=${id}`;
+
+  connection.query(consulta, (error, resultado) => {
+    if (error) throw error;
+    if (resultado.length > 0) {
+      res.json(resultado);
+    } else {
+      res.send("No hay un ID que matchee con la base");
+    }
+  });
+});
+app.get("/prueba/calle/altura/:id", (req, res) => {
+  const { id } = req.params;
+  const consulta = `SELECT * FROM altura WHERE idAltura=${id}`;
+
+  connection.query(consulta, (error, resultado) => {
+    if (error) throw error;
+    if (resultado.length > 0) {
+      res.json(resultado);
+    } else {
+      res.send("No hay un ID que matchee con la base");
+    }
+  });
+});
+app.get("/prueba/calle/altura/operacion/:id", (req, res) => {
+  const { id } = req.params;
+  const consulta = `SELECT * FROM tasacion WHERE tipoDeOperacion=${id}`;
+
+  connection.query(consulta, (error, resultado) => {
+    if (error) throw error;
+    if (resultado.length > 0) {
+      res.json(resultado);
+    } else {
+      res.send("No hay un ID que matchee con la base");
+    }
+  });
+});
+app.get("/prueba/calle/altura/operacion/inmueble/:id", (req, res) => {
+  const { id } = req.params;
+  const consulta = `SELECT * FROM tasacion WHERE tipoDeInmueble=${id}`;
+
+  connection.query(consulta, (error, resultado) => {
+    if (error) throw error;
+    if (resultado.length > 0) {
+      res.json(resultado);
+    } else {
+      res.send("No hay un ID que matchee con la base");
+    }
+  });
+});
+app.get("/prueba/calle/altura/operacion/inmueble/banios/:id", (req, res) => {
+  const { id } = req.params;
+  const consulta = `SELECT * FROM tasacion WHERE cantBanios=${id}`;
+
+  connection.query(consulta, (error, resultado) => {
+    if (error) throw error;
+    if (resultado.length > 0) {
+      res.json(resultado);
+    } else {
+      res.send("No hay un ID que matchee con la base");
+    }
+  });
+});
+app.get("/prueba/calle/altura/tipo/banios/metrosE/:id", (req, res) => {
+  const { id } = req.params; 
+  const consulta = `SELECT * FROM tasacion WHERE cantMtExt =${id}`;
+
+  connection.query(consulta, (error, resultado) => {
+    if (error) throw error;
+    if (resultado.length > 0) {
+      res.json(resultado);
+    } else {
+      res.send("No hay un ID que matchee con la base");
+    }
+  });
+});
+app.get("/prueba/calle/altura/tipo/banios/metrosE/metrosI/:id", (req, res) => {
+  const { id } = req.params; 
+  const consulta = `SELECT * FROM tasacion WHERE cantMtInt=${id}`;
+
+  connection.query(consulta, (error, resultado) => {
+    if (error) throw error;
+    if (resultado.length > 0) {
+      res.json(resultado);
+    } else {
+      res.send("No hay un ID que matchee con la base");
+    }
+  });
+});
+app.get("/prueba/calle/altura/tipo/banios/metrosE/metrosI/:id", (req, res) => {
+  const { id } = req.params; 
+  const consulta = `SELECT * FROM tasacion WHERE cantMtInt=${id}`;
+
+  connection.query(consulta, (error, resultado) => {
+    if (error) throw error;
+    if (resultado.length > 0) {
+      res.json(resultado);
+    } else {
+      res.send("No hay un ID que matchee con la base");
+    }
+  });
+});
+app.get("/prueba/calle/altura/tipo/banios/metrosE/metrosI/cochera/:id", (req, res) => {
+  const { id } = req.params;
+  const consulta = `SELECT * FROM tasacion WHERE cochera=${id}`;
+
+  connection.query(consulta, (error, resultado) => {
+    if (error) throw error;
+    if (resultado.length > 0) {
+      res.json(resultado);
+    } else {
+      res.send("No hay un ID que matchee con la base");
+    }
+  });
+});
+app.get("/prueba/calle/altura/tipo/banios/metrosE/metrosI/cochera/:id", (req, res) => {
+  const { id } = req.params;
+  const consulta = `SELECT * FROM tasacion WHERE cochera=${id}`;
+
+  connection.query(consulta, (error, resultado) => {
+    if (error) throw error;
+    if (resultado.length > 0) {
+      res.json(resultado);
+    } else {
+      res.send("No hay un ID que matchee con la base");
+    }
+  });
+});
+app.get("/prueba/calle/altura/tipo/banios/metrosE/metrosI/cochera/pileta/:id", (req, res) => {
+  const { id } = req.params;
+  const consulta = `SELECT * FROM tasacion WHERE pileta=${id}`;
+
+  connection.query(consulta, (error, resultado) => {
+    if (error) throw error;
+    if (resultado.length > 0) {
+      res.json(resultado);
+    } else {
+      res.send("No hay un ID que matchee con la base");
+    }
+  });
+});
+app.get("/prueba/calle/altura/tipo/banios/metrosI/cochera/pileta/jardin/:id", (req, res) => {
+  const { id } = req.params;
+  const consulta = `SELECT * FROM tasacion WHERE pileta=${id}`;
+
+  connection.query(consulta, (error, resultado) => {
+    if (error) throw error;
+    if (resultado.length > 0) {
+      res.json(resultado);
+    } else {
+      res.send("No hay un ID que matchee con la base");
+    }
+  });
+});
+app.post("/pruebas", (req, res) => {
+  const consulta = `INSERT INTO ciudad SET ?`;
+  const customObject = {
+    nombre: req.body.name,
+  };
+
+  connection.query(consulta, customObject, (error) => {
+    if (error) throw error;
+    res.send("Se insertó el registro!");
+  });
+});
+app.post("/pruebas/calles", (req, res) => {
+  const consulta = `INSERT INTO calle SET ?`;
+  const customObject = {
+    nombre: req.body.name,
+  };
+
+  connection.query(consulta, customObject, (error) => {
+    if (error) throw error;
+    res.send("Se insertó el registro!");
+  });
+});
+app.post("/pruebas/calles/alturas", (req, res) => {
+  const consulta = `INSERT INTO altura SET ?`;
+
+  const customObject = {
+    maxima: req.body.max,
+    minima: req.body.min,
+  };
+
+  connection.query(consulta, customObject, (error) => {
+    if (error) throw error;
+    res.send("Se insertó el registro!");
+  });
+});
+app.post("/pruebas/calles/alturas/tasaciones", (req, res) => {
+  const consulta = `INSERT INTO tasacion SET ?`;
+
+  const customObject = {
+    operacion: req.body.operacion,
+    inmueble: req.body.inmueble,
+    altura: req.body.altura,
+    banios: req.body.banios,
+    metrose: req.body.metrose,
+    metrosi: req.body.metrosi,
+    cochera: req.body.cochera,
+    pileta: req.body.pileta,
+    jardin: req.body.jardin,
+  };
+
+  connection.query(consulta, customObject, (error) => {
+    if (error) throw error;
+    res.send("Se insertó el registro!");
+  });
+});
+app.put("/prueba/:id", (req, res) => {
+  const {id} = req.params;
+  const {name} = req.body;
+
+  const consulta = `UPDATE ciudad SET nombre="${name}" WHERE idCiudad=${id}`;
+
+  connection.query (consulta, (error) => {
+    if (error) throw error;
+    res.send("Se actualizó la tabla!");
+  });
+});
+app.put("/prueba/calle/:id", (req, res) => {
+  const {id} = req.params;
+  const {name} = req.body;
+
+  const consulta = `UPDATE calle SET nombre="${name}" WHERE idCalle=${id}`;
+
+  connection.query (consulta, (error) => {
+    if (error) throw error;
+    res.send("Se actualizó la tabla!");
+  });
+});
+app.put("/prueba/calle/altura/:id", (req, res) => {
+  const {id} = req.params;
+  const {altura} = req.params;
+
+  const consulta = `UPDATE altura SET alturaMaxima=${altura} WHERE idAltura=${id}`;
+
+  connection.query (consulta, (error) => {
+    if (error) throw error;
+    res.send("Se actualizó la tabla!");
+  });
+});
+
+app.put("/prueba/calle/altura/tasacion/:id", (req, res) => {
+  const {id} = req.params;
+  const {operacion} = req.body;
+
+  consulta operacion = `UPDATE tasaciones SET operacion=${tipoDeOperacion} WHERE idTasacion=${id}`;
+    
+  connection.query (consulta, (error) => {
+    if (error) throw error;
+    res.send("Se actualizó la tabla!");
+  });
+});
+
+app.put("/prueba/calle/altura/tasacion/:id", (req, res) => {
+  const { id } = req.params;
+  const {banios} = req.body;
+
+  consulta banios = `UPDATE tasaciones SET banios=${cantBanios} WHERE idTasacion=${id}`;
+  
+  connection.query (consulta, (error) => {
+    if (error) throw error;
+    res.send("Se actualizó la tabla!");
+  });
+ 
+});
+app.put("/prueba/calle/altura/tasacion/:id", (req, res) => {
+  const { id } = req.params;
+  const {cochera} = req.body;
+
+  consulta cochera = `UPDATE tasaciones SET cochera=${cochera} WHERE idTasacion=${id}`;
+  
+  
+  connection.query (consulta, (error) => {
+    if (error) throw error;
+    res.send("Se actualizó la tabla!");
+  });
+ 
+});
+app.put("/prueba/calle/altura/tasacion/:id", (req, res) => {
+  const { id } = req.params;
+  const {jardin} = req.body;
+   
+  consulta jardin = `UPDATE tasaciones SET jardin=${jardin} WHERE idTasacion=${id}`;
+  
+  
+  connection.query (consulta, (error) => {
+    if (error) throw error;
+        res.send("Se actualizó la tabla!");
+  });
+ 
+});
+app.delete("/prueba/:id", (req, res) => {
+  const { id } = req.params;
+
+  consulta = `DELETE FROM ciudad WHERE idCiudad=${id}`;
+
+  connection.query(consulta, (error) => {
+    if (error) throw error;
+        res.send("Se eliminó el registro");
+  });
+});
+app.delete("/calle/:id", (req, res) => {
+  const { id } = req.params;
+
+  consulta = `DELETE FROM calle WHERE idCiudad=${id}`;
+
+  connection.query(consulta, (error) => {
+    if (error) throw error;
+    res.send("Se eliminó el registro");
+  });
+});
+app.delete("/altura/:id", (req, res) => {
+  const { id } = req.params;
+
+  consulta = `DELETE FROM altura WHERE idAltura=${id}`;
+
+  connection.query(consulta, (error) => {
+    if (error) throw error;
+    res.send("Se eliminó el registro");
+  });
+});
+app.delete("/tasacion/:id, (req, res) => {
+  const { id } = req.params;
+
+  consulta = `DELETE FROM calle WHERE idCiudad=${id}`;
+
+  connection.query(consulta, (error) => {
+    if (error) throw error;
+    res.send("Se eliminó el registro");
+  });
+});
+ 
+ 
+ 
+ 
+  
+ 
+
+  

@@ -1,0 +1,7 @@
+SELECT altura.precio_metro 
+  FROM calle, altura, ciudad
+  WHERE calle.id_calle = altura.id_calle
+  AND calle.id_ciudad = ciudad.id_ciudad
+  AND UPPER(ciudad.nombre) LIKE UPPER("Olavarria")
+  AND UPPER(calle.nombre) LIKE UPPER("Laprida") 
+  AND 1600 BETWEEN altura.altura_minima AND altura.altura_maxima
